@@ -1,0 +1,33 @@
+{
+  "name": "deploy-bot",
+  "version": "1.0.0",
+  "description": "An attempt at a SRE/Devops deploy bot",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "nodemon --watch . --inspect server.js",
+    "start:prod": "node server.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muge13/sre-bot.git"
+  },
+  "keywords": [
+    "sre",
+    "devops",
+    "bot"
+  ],
+  "author": "Ian Muge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muge13/sre-bot/issues"
+  },
+  "homepage": "https://github.com/muge13/sre-bot#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
