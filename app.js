@@ -1,15 +1,15 @@
 'use strict';
-
 const express = require('express');
+const config =require('./config')
 
 // Constants
-const PORT = 3000;
-const HOST = '0.0.0.0';
+const PORT = config.port;
+const HOST = config.host;
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World and please');
+  res.send('Hello World ');
 });
 
 app.listen(PORT, HOST);
