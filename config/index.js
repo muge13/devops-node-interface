@@ -7,7 +7,10 @@ const config={
   host: process.env.HOST||'0.0.0.0',
   env: process.env.NODE_ENV||'development',
   jenkins:{
-    url:process.env.JENKINS_URL
+    url: process.env.JENKINS_URL,
+    https: process.env.JENKINS_HTTPS,
+    username: process.env.JENKINS_USERNAME,
+    token: process.env.JENKINS_TOKEN
   }
 };
 module.exports=config;
