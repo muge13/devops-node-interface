@@ -11,6 +11,9 @@ const config={
     https: process.env.JENKINS_HTTPS,
     username: process.env.JENKINS_USERNAME,
     token: process.env.JENKINS_TOKEN
+  },
+  telegram:{
+    token: process.env.TELEGRAM_TOKEN
   }
 };
 module.exports=config;

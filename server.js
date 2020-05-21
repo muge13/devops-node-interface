@@ -1,7 +1,7 @@
 const app = require('./app');
 const config = require('./config');
 const PORT = config.port;
-app.listen(PORT,err=>{
+app.app.listen(PORT,err=>{
   if (err) {
     console.log(err);
     process.exit(1);
@@ -9,3 +9,4 @@ app.listen(PORT,err=>{
   }
   console.log(`Server listening on port: ${PORT}`);
 });
+app.bot.launch();
