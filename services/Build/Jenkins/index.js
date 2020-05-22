@@ -1,4 +1,5 @@
 const config = require("../../../config");
+const map= require("../../../config/map");
 const axios = require('axios');
 
 class Jenkins {
@@ -21,30 +22,44 @@ class Jenkins {
                     url: url,
                     method: 'get',
                     params: {
-                        pretty: true
+                        tree: map.jenkins.general
                     }
                 })
                 .then(resp => {
-                    let data={
-                        mode: resp.data.mode,
-                        jobs: []
-                    }
-                    resp.data.jobs.forEach(element => {
-                        data.jobs.push({
-                            name: element.name,
-                            status: element.color
-                        });                       
-                    });
-                    resolve(data);
+                    resolve(resp.data);
                     console.log(resp.status);          
                 })
                 .catch(err => {
                     reject(err);
                     console.log(err);          
                 }).then(() => {
-                    console.log("complete");          
+                    // console.log("complete");
                 });
             
+        });
+    }
+    jobs() {
+        return new Promise((resolve,reject)=>{
+            var url = '/api/json';
+            this.instance.request(
+                {
+                    url: url,
+                    method: 'get',
+                    params: {
+                        tree: map.jenkins.jobs
+                    }
+                })
+                .then(resp => {
+                    resolve(resp.data.jobs);
+                    console.log(resp.status);
+                })
+                .catch(err => {
+                    reject(err);
+                    console.log(err);
+                }).then(() => {
+                // console.log("complete");
+            });
+
         });
     }
 }

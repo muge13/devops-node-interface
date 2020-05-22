@@ -4,9 +4,11 @@ All from a single interface
 # Tasks
 Basic Tasks to complete:
 - [] Jenkins API
-- [] K8s API
+
 - [] Cloud API
     - [] AWS
+        - [] K8s
+        - [] Compute
     - [] GCP
     - [] Azure
 - [] Destinations

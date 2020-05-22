@@ -6,9 +6,17 @@ const jenkins = new JenkinsService();
 routes.get('/', async (req, res, next) => {
     jenkins.status().then((fullfilled)=>{
         // console.log(fullfilled);
-        return res.json(fullfilled).status(200);
+        return res. json(fullfilled).status(200);
     }).catch(error=>{
             console.log(error)
+    });
+});
+routes.get('/jobs', async (req, res, next) => {
+    jenkins.jobs().then((fullfilled)=>{
+        // console.log(fullfilled);
+        return res.json(fullfilled).status(200);
+    }).catch(error=>{
+        console.log(error)
     });
 });
 module.exports = routes;

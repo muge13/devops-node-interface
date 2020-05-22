@@ -9,4 +9,4 @@ app.app.listen(PORT,err=>{
   }
   console.log(`Server listening on port: ${PORT}`);
 });
-app.bot.launch();
+// app.bot.launch();

@@ -10,7 +10,8 @@ const config={
     url: process.env.JENKINS_URL,
     https: process.env.JENKINS_HTTPS,
     username: process.env.JENKINS_USERNAME,
-    token: process.env.JENKINS_TOKEN
+    token: process.env.JENKINS_TOKEN,
+    projects:[]
   },
   telegram:{
     token: process.env.TELEGRAM_TOKEN

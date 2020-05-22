@@ -1,14 +1,18 @@
 'use strict';
 const express = require('express');
-const Telegraf  = require('telegraf');
+// const Telegraf  = require('telegraf');
 const config = require('./config');
+const botgram = require("botgram")
 
 const app = express();
 require('./routes')(app);
 
-const bot = new Telegraf(config.telegram.token);
-bot.use(Telegraf.log())
+const bot= botgram(config.telegram.token);
 require('./interfaces')(bot)
+
+//initialize services
+const init=require("./init/config");
+init();
 
 exports.app = app;
 exports.bot = bot;
