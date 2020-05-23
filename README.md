@@ -3,8 +3,7 @@ Create an interface for bots to query for Build Jobs, server/service statuses, h
 All from a single interface
 # Tasks
 Basic Tasks to complete:
-- [] Jenkins API
-
+- [x] Jenkins API
 - [] Cloud API
     - [] AWS
         - [] K8s
